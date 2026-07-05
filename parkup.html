@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkUp - No more stress </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div id="navigation">
+       <a href="index.html">Home</a>
+       <a href="lista.html">Trova Parcheggio</a>
+       <a href="aggiungi.html">Affitta il tuo posto</a>
+       <a href="contatti.html">Contatti</a>
+     </div>
+<div id="hero">
+  <img src="images/parcheggio-citta.jpg"
+       alt="Parcheggio in città"
+       id="hero-img">
+    <h1>Benvenuto in ParkUp!🚗</h1>
+    <h2>Basta girare. Prenota e parcheggia subito!</h2>
+
+    <p>
+        ParkUp è il tuo alleato per trovare velocemente un posto auto vicino a te!
+        Affitta il tuo posto perfetto... Zero Stress, Zero giri a vuoto!
+    </p>
+
+    <a href="lista.html">Trova un posto</a>
+    <a href="aggiungi.html">Affitta il tuo posto</a>
+</div>
+
+<div id="stats">
+    Posti disponibili oggi:<span>4 </span> &nbsp;|&nbsp;
+    Servizio attivo: <span>24/7</span> &nbsp;|&nbsp;
+    Commissioni: <span>0 euro</span>
+</div>
+
+<div id="contenuto">
+
+    <div id="messaggio"></div>
+        <h2 class="titolo-sezione">Come funziona? É semplicissimo:</h2>
+
+    <h3> Se cerchi parcheggio:</h3>
+    <ol>
+        <li> Vai nella sezione <a href="lista.html">Trova Parcheggio </a></li>
+        <li> Scegli il posto che preferisci</li>
+        <li> Contatta il proprietario e prenota </li>
+    </ol>
+
+    <h3> Se hai un posto libero:</h3>
+    <ol>
+        <li> Vai nella sezione<a href="aggiungi.html">Affitta il tuo posto auto</a></li>
+        <li> Compila il modulo con i dati del tuo parcheggio</li>
+        <li> Inizia a guadagnare</li>
+    </ol>
+
+    <h2 class="titolo-sezione"> Perché scegliere ParkUp?</h2>
+    <ul>
+        <li> Posti auto a prezzi accessibili ✅</li>
+        <li> Privati verificati ✅</li>
+        <li> Disponibile 24 ore su 24 ✅</li>
+        <li> Nessuna commissione nascosta ✅</li>
+    </ul>
+
+    <br>
+    <button onclick="mostraMessaggio('Hai bisogno di aiuto? Scrivici nella pagina Contatti!')">
+        Hai bisogno di aiuto? Scrivici nella pagina Contatti!
+    </button>
+    &nbsp;
+    <button onclick="nascondiMessaggio()">
+        Chiudi messaggio
+    </button>
+
+</div>
+
+<div id="footer">
+    <p>
+        <strong> ParkUp</strong> - Progetto per il corso di Tecnologie Web <br>
+        Università degli studi di Napoli L'Orientale
+    </p>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ParkUp - Trova Parcheggio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+
+<body>
+
+<div id="navigation">
+    <a href="index.html">Home</a>
+    <a href="lista.html"> Trova Parcheggio</a>
+    <a href="aggiungi.html"> Affitta il tuo posto </a>
+    <a href="contatti.html"> Contatti </a>
+</div>
+
+<div id="contenuto">
+
+    <h1> Posti auto disponibili</h1>
+    <p> Trovati <strong><span id="num-posti">0</span></strong> posti in questa pagina.</p>
+
+    <div id="messaggio"></div>
+
+    <h2 class="titolo-sezione"> Mappa dei parcheggi</h2>
+    <p>Clicca su un segnaposto per vedere i dettagli del posto.</p>
+    <div id="mappa"></div>
+
+    <h2 class="titolo-sezione">Posti auto vicino a te:</h2>
+    <table id="tabella-posti">
+        <tr>
+            <th>Nome posto:</th>
+            <th>Zona:</th>
+            <th>Prezzo/ora:</th>
+            <th>Orari:</th>
+            <th>Disponibilità:</th>
+        </tr>
+        <tr>
+            <td> Box coperto</td>
+            <td>Centro Storico</td>
+            <td>2,00 euro</td>
+            <td>Tutti i giorni, h24</td>
+            <td class="disponibile">Disponibile</td>
+        </tr>
+        <tr>
+            <td>Area recintata</td>
+            <td>Vomero</td>
+            <td>1,50 euro</td>
+            <td>Lun - Ven, 8:00 - 20:00</td>
+            <td class="disponibile">Disponibile</td>
+        </tr>
+        <tr>
+            <td>Garage privato</td>
+            <td>Chiaia</td>
+            <td>2,50 euro</td>
+            <td>Tutti i giorni, h24</td>
+            <td class="disponibile">Disponibile</td>
+        </tr>
+        <tr>
+            <td>Posto cortile</td>
+            <td>Fuorigrotta</td>
+            <td>1,20 euro</td>
+            <td>Mar - Mer - Gio - Ven dalle 14 alle 00</td>
+            <td class="non-disponibile">Non disponibile</td>
+        </tr>
+        <tr>
+            <td>Box coperto</td>
+            <td>Rione Alto</td>
+            <td>1,50 euro</td>
+            <td>Tutti i giorni (escluso fine settimana) dalle 9 alle 22</td>
+            <td class="non-disponibile">Non disponibile</td>
+        </tr>
+    </table>
+
+    <h2 class="titolo-sezione"> Tutti i posti:</h2>
+
+    <div class="scheda-posto" id="posto-1">
+        <h2> Box coperto - Centro Storico </h2>
+        <img src="images/centro-storico.jpg"
+             alt="Centro Storico"
+             class="foto-posto">
+        <p><strong> Indirizzo:</strong> Via Toledo 45, Napoli </p>
+        <p><strong> Proprietario:</strong> Luigi Ferraro</p>
+        <p><strong> Prezzo:</strong> 2,00 euro/ora</p>
+        <p><strong> Disponibilità:</strong> Tutti i giorni h24</p>
+             <span class="disponibile">Disponibile</span>
+        <p><button onclick="toggleNote('note-1')">Mostra/Nascondi note </button></p>
+        <div id="note-1" style="display: none;">
+        <p><em> Box chiuso con telecomando. Altezza max. 2 metri.</em></p>
+        </div>
+
+        <script>
+            function toggleNote(id) {
+                let nota = document.getElementById(id);
+                if (nota) {
+                    if (nota.style.display === "none" || nota.style.display === "") {
+                        nota.style.display = "block";
+                    } else {
+                        nota.style.display = "none";
+                    }
+                }
+            }
+        </script>
+        <p><strong> Contatto:</strong>
+            <a href="mailto:luigi.ferraro@email.it">luigi.ferraro@email.it</a>
+        </p>
+        <a href="prenota.html">Prenota questo posto </a>
+    </div>
+
+    <div class="scheda-posto" id="posto-2">
+        <h2> Area recintata - Vomero</h2>
+        <img src="images/vomero.jpg"
+             alt="Vomero"
+             class="foto-posto">
+        <p><strong> Indirizzo:</strong> Via Scarlatti 22, Napoli</p>
+        <p><strong> Proprietario:</strong> Anna De Luca</p>
+        <p><strong> Prezzo:</strong> 1,50 euro/ora</p>
+        <p><strong> Disponibilità:</strong>Lunedì - Venerdì, 8:00 - 20:00</p>
+        <span class="disponibile">Disponibile</span>
+        <p><button onclick="toggleNote('note-2')">Mostra/Nascondi note</button></p>
+       <div id="note-2" style="display:none;">
+            <p><em>Cortile privato. Accesso libero durante gli orari indicati </em></p>
+        </div>
+        <p><strong> Contatto:</strong>
+            <a href="mailto:anna.deluca@email.it">anna.deluca@email.it</a>
+        </p>
+        <a href="prenota.html">Prenota questo posto </a>
+    </div>
+
+    <div class="scheda-posto" id="posto-3">
+         <h2> Garage privato - Chiaia </h2>
+    <img src="images/chiaia.jpg"
+         alt="Chiaia"
+         class="foto-posto">
+    <p><strong> Indirizzo:</strong>Via Caracciolo 10, Napoli</p>
+    <p><strong> Proprietario:</strong> Marco Esposito</p>
+    <p><strong> Prezzo:</strong> 2,50 euro/ora</p>
+    <p><strong> Disponibilità:</strong> Tutti i giorni, 24 ore su 24</p>
+    <span class="disponibile">Disponibile</span>
+    <p><button onclick="toggleNote('note-3')">Mostra/Nascondi note</button></p>
+    <div id="note-3" style="display:none;">
+         <p><em> Fronte mare, sorvegliato. Ideale per eventi sul Lungomare.</em></p>
+    </div>
+    <p><strong>Contatto:</strong> <a href="mailto:marco.esposito@email.it">marco.esposito@email.it</a>
+    </p>
+    <a href="prenota.html">Prenota questo posto </a>
+    </div>
+
+<div class="scheda-posto" id="posto-4">
+     <h2> Posto cortile - Fuorigrotta </h2>
+     <img src="images/fuorigrotta.jpg"
+          alt="Fuorigrotta"
+          class="foto-posto">
+     <p><strong>Indirizzo:</strong> Via Giulio Cesare 120, Napoli</p>
+     <p><strong> Proprietario:</strong> Roberto Conte</p>
+     <p><strong> Prezzo:</strong> 1,20 euro/ora</p>
+     <p><strong>Disponibilità:</strong> Martedì, Mercoledì, Giovedì, Venerdì dalle 14 alle 00</p>
+        <span class="non-disponibile"> Non disponibile</span>
+     <p><button onclick="toggleNote('note-4')">Mostra/Nascondi note</button></p>
+     <div id="note-4" style="display:none;">
+         <p><em>Vicino allo stadio. Ottimo per le partite</em></p>
+     </div>
+     <p><strong> Contatto:</strong><a href="mailto:roberto.conte@email.it">roberto.conte@email.it</a>
+     </p>
+
+</div>
+
+<div class="scheda-posto" id="posto-5">
+     <h2> Box coperto - Rione Alto</h2>
+     <img src="images/rione%20alto.jpg"
+          alt="Rione Alto"
+          class="foto-posto">
+     <p><strong> Indirizzo:</strong> Via Giulio Palermo 45, Napoli</p>
+     <p><strong> Proprietario:</strong> Elena Riccio</p>
+     <p><strong> Prezzo:</strong> 1,50 euro/ora</p>
+     <p><strong> Disponibilità:</strong> Tutti i giorni (escluso fine settimana) dalle 9 alle 22 </p>
+         <span class="non-disponibile"> Non disponibile</span>
+          <p><button onclick="toggleNote('note-5')">Mostra/Nascondi note</button></p>
+     <div id="note-5" style="display:none;">
+         <p><em>Accesso al box gestito dal portiere del parco</em></p>
+     </div>
+<p><strong> Contatto:</strong>
+    <a href="mailto:elenariccio@email.it">elena.riccio@email.it</a></p>
+</div>
+
+<hr>
+<p> Vuoi aggiungere anche tu il tuo Posto cortile?
+    <a href="aggiungi.html"> Inizia a guadagnare subito anche tu</a>!
+</p>
+
+
+<div id="footer">
+    <p>
+        <strong>ParkUp</strong>- Progetto per il corso di Tecnologie Web <br>
+        Università degli Studi di Napoli L'Orientale
+    </p>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mappa.js"></script>
+</div>
+</body>
+</html>

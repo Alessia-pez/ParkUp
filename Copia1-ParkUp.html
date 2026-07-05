@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ParkUp - Contatti</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div id="navigation">
+    <a href="index.html">Home</a>
+    <a href="lista.html">Trova parcheggio</a>
+    <a href="aggiungi.html">Affitta il tuo posto</a>
+    <a href="contatti.html">Contatti</a>
+</div>
+
+<div id="contenuto">
+    <h1>Contatti</h1>
+    <p>Hai domande o hai bisogno di aiuto? Scrivici!</p>
+
+    <div id="messaggio"></div>
+
+    <h2 class="titolo-sezione"> Dove siamo</h2>
+
+    <address>
+        <strong>ParkUp</strong><br>
+        Via Nuova Marina, 59 <br>
+        80134 Napoli (NA) <br>
+        Italia <br><br>
+        Email: <a href="mailto:info@parkup.it">info@parkup.it</a><br>
+        Telefono: +39 081 560 732
+    </address>
+
+    <h2 class="titolo-sezione"> Scrivici un messaggio</h2>
+
+</div>
+
+<div id="form-contenuto">
+
+    <form method="post" action="#" onsubmit="return validaForm()">
+
+        <label for="nome"> Il tuo nome e cognome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome e Cognome">
+
+        <label for="email"> La tua email:</label>
+        <input type="email" id="email" name="email" placeholder="Email">
+
+        <label for="subject"> Oggetto:</label>
+        <input type="text" id="subject" name="subject" placeholder="Oggetto">
+
+        <label for="messagio-testo"> Messaggio:</label>
+        <textarea id="messagio-testo" name="messagio-testo" rows="6"></textarea>
+
+        <br>
+        <input type="submit" value="Invia messaggio">
+        <input type="reset" value="Cancella">
+    </form>
+
+</div>
+
+<div id="contenuto-informativo">
+
+    <h2 class="titolo-sezione">Domande frequenti</h2>
+
+    <h3> Come faccio a prenotare un posto?</h3>
+    <p>
+        Vai nella sezione<a href="lista.html">Trova parcheggio </a>
+        scegli il tuo posto ideale e contatta il proprietario tramite email.
+    </p>
+
+    <h3> Quali costi prevede l'utilizzo di ParkUp?</h3>
+    <p>
+        Nessuno! Il servizio è completamente gratuito.
+        Paghi solo il proprietario del parcheggio.
+    </p>
+
+    <h3> Come faccio ad aggiungere il mio posto auto?</h3>
+    <p>
+        Vai nella sezione<a href="aggiungi.html">Affitta il tuo posto </a>
+        e compila il modulo.
+    </p>
+</div>
+
+<div id="footer">
+    <p>
+        <strong>ParkUp</strong> - Progetto per il corso di Tecnologie Web <br>
+        Università degli Studi di Napoli L'Orientale
+    </p>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
