@@ -317,3 +317,18 @@ ul, ol {
     margin-top: 4px;
     margin-bottom: 10px;
 }
+
+/* Rende il link simile a un vero pulsante */
+.bottone-contatti {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Cambia colore quando l'utente ci passa sopra con il mouse */
+.bottone-contatti:hover {
+    background-color: #0056b3;
+}
