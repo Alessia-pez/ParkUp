@@ -50,7 +50,7 @@ function validaForm() {
 
 function contaPosti() {
     try {
-        let schede = document.getElementById("scheda-posto");
+        let schede = document.getElementsByClassName("scheda-posto");
         let contatore = document.getElementById("num-posti");
         let totale = 0;
 
@@ -62,9 +62,6 @@ function contaPosti() {
             contatore.innerHTML = totale.toString();
         }
 
-        if (elementi && elementi.lenght) {
-
-        }
     } catch (errore) {
         console.log("Errore contaPosti: " + errore);
     }

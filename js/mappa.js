@@ -52,7 +52,7 @@ for (let i = 0; i < posti.length; i++) {
                                   "Prezzo: " + posto.prezzo + "<br>" +
                                   "Stato:" + stato;
         L.marker([posto.lat, posto.lng])
-            .addTo(mappa)
+            .addTo(miaMappa)
             .bindPopup(testoPopup);
 
     }catch(errore) {
